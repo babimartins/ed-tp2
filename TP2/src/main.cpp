@@ -1,6 +1,8 @@
 #include <iostream>
 #include <getopt.h>
 #include "../include/msgassert.h"
+#include "../include/wordCount.h"
+#include "../include/files.h"
 
 std::string inputFile;
 std::string outputFile;
@@ -28,6 +30,11 @@ void parse_args(int argc, char** argv) {
 
 int main(int argc, char** argv) {
     parse_args(argc, argv);
+
+    VectorCustom<std::string> words;
+    VectorCustom<WordCount> wordsCount;
+    readFile(inputFile, &words);
+    writeFile(outputFile, wordsCount);
 
     return 0;
 }
