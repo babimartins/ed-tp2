@@ -1,16 +1,16 @@
 #include <utility>
-#include "../include/wordCount.h"
+#include "../include/word.h"
 
-WordCount::WordCount() {
+Word::Word() {
     _word = "";
     _count = 0;
 }
 
-WordCount::WordCount(std::string word, int count) {
+Word::Word(std::string word, int count) {
     _word = std::move(word);
     _count = count;
 }
 
-void WordCount::print() {
+void Word::print() {
     std::cout << _word << " " << _count << std::endl;
 }

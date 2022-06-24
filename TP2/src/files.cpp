@@ -70,7 +70,7 @@ void readFile(const std::string& filename, VectorCustom<std::string>* words) {
 //                }
 //                play = Play(playerName, bet, hand);
 //                plays.push(play);
-//                WordCount player = WordCount(playerName, initAmount);
+//                Word player = Word(playerName, initAmount);
 //                match->updatePlayer(player);
 //            }
 //
@@ -86,7 +86,7 @@ void readFile(const std::string& filename, VectorCustom<std::string>* words) {
     file.close();
 }
 
-void writeFile(const std::string &filename, VectorCustom<WordCount> wordsCount) {
+void writeFile(const std::string &filename, VectorCustom<Word> wordsCount) {
     std::fstream file;
     FILE *fp = freopen(filename.c_str(), "w", stdout);
 //    match.printResults();

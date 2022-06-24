@@ -1,17 +1,17 @@
-#ifndef WORDCOUNT_H
-#define WORDCOUNT_H
+#ifndef WORD_H
+#define WORD_H
 
 #include <iostream>
 #include "vector.h"
 
-class WordCount {
+class Word {
 protected:
     std::string _word;
     int _count;
 
 public:
-    WordCount();
-    WordCount(std::string word, int count);
+    Word();
+    Word(std::string word, int count);
 
     std::string getPlayerName() const { return _word; }
     int getTotalAmount() const { return _count; }
@@ -19,6 +19,10 @@ public:
     void setTotalAmount(int count) { _count = count; }
 
     void print();
+
+    bool operator< (const Word &other) {
+//        return lhs[0] < rhs[0];
+    }
 };
 
-#endif //WORDCOUNT_H
+#endif //WORD_H
