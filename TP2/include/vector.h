@@ -3,20 +3,20 @@
 
 #include <iostream>
 
-template <typename T> class VectorCustom {
+template <typename T> class Vector {
 private:
     T* arr;
     int size;
     int max;
 
 public:
-    VectorCustom() {
+    Vector() {
         arr = new T[1];
         size = 0;
         max = 1;
     };
 
-    explicit VectorCustom(T data) {
+    explicit Vector(T data) {
         arr = new T[1];
         arr[0] = data;
         size = 1;

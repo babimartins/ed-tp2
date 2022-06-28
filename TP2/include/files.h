@@ -3,7 +3,7 @@
 
 #include "word.h"
 
-void readFile(const std::string& filename, VectorCustom<std::string>* words);
-void writeFile(const std::string &filename, VectorCustom<Word> wordsCount);
+void readFile(const std::string& filename, Vector<std::string>* words);
+void writeFile(const std::string &filename, Vector<Word> wordsCount);
 
 #endif //FILES_H

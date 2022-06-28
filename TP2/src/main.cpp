@@ -31,8 +31,8 @@ void parse_args(int argc, char** argv) {
 int main(int argc, char** argv) {
     parse_args(argc, argv);
 
-    VectorCustom<std::string> words;
-    VectorCustom<Word> wordsCount;
+    Vector<std::string> words;
+    Vector<Word> wordsCount;
     readFile(inputFile, &words);
     writeFile(outputFile, wordsCount);
 

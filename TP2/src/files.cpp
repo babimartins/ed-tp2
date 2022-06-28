@@ -4,7 +4,7 @@
 #include "../include/files.h"
 #include "../include/msgassert.h"
 
-void readFile(const std::string& filename, VectorCustom<std::string>* words) {
+void readFile(const std::string& filename, Vector<std::string>* words) {
     std::fstream file;
     file.open(filename, std::fstream::in);
 
@@ -14,7 +14,7 @@ void readFile(const std::string& filename, VectorCustom<std::string>* words) {
 //        file >> initAmount;
 //        match->setNumRounds(numRounds);
 //        match->setInitAmount(initAmount);
-//        VectorCustom<Round> rounds;
+//        Vector<Round> rounds;
 //        int numPlayers, initBet, countRounds = 0;
 //
 //        while (countRounds < numRounds) {
@@ -49,12 +49,12 @@ void readFile(const std::string& filename, VectorCustom<std::string>* words) {
 //                }
 //            }
 //
-//            VectorCustom<Play> plays;
+//            Vector<Play> plays;
 //            for (int j = 0; j < numPlayers; ++j) {
 //                Play play;
 //                std::string playerName;
 //                int bet;
-//                VectorCustom<std::string> hand;
+//                Vector<std::string> hand;
 //                if (playersData[j][7].empty()) {
 //                    playerName = playersData[j][0];
 //                    bet = std::stoi(playersData[j][1]);
@@ -86,7 +86,7 @@ void readFile(const std::string& filename, VectorCustom<std::string>* words) {
     file.close();
 }
 
-void writeFile(const std::string &filename, VectorCustom<Word> wordsCount) {
+void writeFile(const std::string &filename, Vector<Word> wordsCount) {
     std::fstream file;
     FILE *fp = freopen(filename.c_str(), "w", stdout);
 //    match.printResults();
