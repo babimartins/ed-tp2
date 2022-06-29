@@ -23,6 +23,34 @@ public:
     static void setAlphabet(Vector<char> alphabet) { _alphabet = alphabet; }
 
     void print();
+
+    bool operator< (const Word &other) const {
+        std::string left = _word;
+        std::string right = other._word;
+        unsigned long long size = left.length() < right.length() ? left.length() : right.length();
+        for (int i = 0; i < size; ++i) {
+            if (left[i] != right[i]) {
+                return left[i] < right[i];
+            }
+        }
+        return true;
+    }
+
+    bool operator> (const Word &other) const {
+        return other < *this;
+    }
+
+    bool operator== (const Word &other) const {
+        return _word == other._word;
+    }
+
+    bool operator<= (const Word &other) const {
+        return (*this < other) || *this == other;
+    }
+
+    bool operator>= (const Word &other) const {
+        return (*this > other) || *this == other;
+    }
 };
 
 #endif //WORD_H
