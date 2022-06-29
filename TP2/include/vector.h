@@ -73,6 +73,12 @@ public:
         }
         return false;
     };
+
+    void swap(int left, int right) const {
+        T aux = arr[left];
+        arr[left] = arr[right];
+        arr[right] = aux;
+    };
 };
 
 #endif //VECTOR_H
