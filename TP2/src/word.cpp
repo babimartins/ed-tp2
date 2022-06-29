@@ -6,6 +6,11 @@ Word::Word() {
     _count = 0;
 }
 
+Word::Word(std::string word) {
+    _word = std::move(word);
+    _count = 1;
+}
+
 Word::Word(std::string word, int count) {
     _word = std::move(word);
     _count = count;
