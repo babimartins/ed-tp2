@@ -51,6 +51,15 @@ public:
         if (index < size) return arr[index];
     };
 
+    T getIndex(T data) {
+        for (int i = 0; i < size; ++i) {
+            if (arr[i] == data) {
+                return i;
+            }
+        }
+        return -1;
+    };
+
     void pop() {
         size--;
     };
@@ -66,9 +75,9 @@ public:
 
     bool empty() const { return size <= 0; };
 
-    bool contains(T el) const {
+    bool contains(T data) const {
         for (int i = 0; i < size; ++i) {
-            if (arr[i] == el)
+            if (arr[i] == data)
                 return true;
         }
         return false;
