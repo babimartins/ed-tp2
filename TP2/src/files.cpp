@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include<bits/stdc++.h>
 #include "../include/files.h"
 #include "../include/helper.h"
 
