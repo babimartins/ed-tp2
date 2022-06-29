@@ -13,7 +13,7 @@ public:
 
         int count = 0;
         for (int i = start + 1; i <= end; i++) {
-            if (vector.get(i) <= pivot)
+            if (vector[i] <= pivot)
                 count++;
         }
 
@@ -24,7 +24,7 @@ public:
 
         while (i < pivotIndex && j > pivotIndex) {
 
-            while (vector.get(i) <= pivot) {
+            while (vector[i] <= pivot) {
                 i++;
             }
 

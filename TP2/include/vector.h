@@ -74,11 +74,15 @@ public:
         return false;
     };
 
-    void swap(int left, int right) const {
+    void swap(int left, int right) {
         T aux = arr[left];
         arr[left] = arr[right];
         arr[right] = aux;
     };
+
+    T& operator[](int i) {
+        return arr[i];
+    }
 };
 
 #endif //VECTOR_H
