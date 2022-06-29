@@ -15,11 +15,11 @@ public:
     explicit Word(std::string word);
     Word(std::string word, int count);
 
-    std::string getPlayerName() const { return _word; }
-    int getTotalAmount() const { return _count; }
+    std::string getWord() const { return _word; }
+    int getCount() const { return _count; }
     Vector<char> getAlphabet() const { return _alphabet; }
-    void setPlayerName(std::string word) { _word = std::move(word); }
-    void setTotalAmount(int count) { _count = count; }
+    void setWord(std::string word) { _word = std::move(word); }
+    void setCount(int count) { _count = count; }
     static void setAlphabet(Vector<char> alphabet) { _alphabet = alphabet; }
 
     void print();
