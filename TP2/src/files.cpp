@@ -36,9 +36,11 @@ void readFile(const std::string& filename, Vector<char>* alphabet, Vector<Word>*
     file.close();
 }
 
-void writeFile(const std::string &filename, Vector<Word> wordsCount) {
-//    std::fstream file;
-//    FILE *fp = freopen(filename.c_str(), "w", stdout);
-//    match.printResults();
-//    fclose(fp);
+void writeFile(const std::string &filename, Vector<Word> words) {
+    FILE *fp = freopen(filename.c_str(), "w", stdout);
+    for (int i = 0; i < words.length(); ++i) {
+        words[i].print();
+    }
+    std::cout << "#FIM";
+    fclose(fp);
 }
