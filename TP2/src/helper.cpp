@@ -31,3 +31,22 @@ void toLowerCaseString(std::string *word) {
         }
     }
 }
+
+Vector<Word> uniteRepeatedWords(Vector<Word> words) {
+    Vector<Word> newWords;
+    for (int i = 0; i < words.length(); ++i) {
+        if (!newWords.contains(words[i])) {
+            int count = 1;
+            for (int j = i + 1; j < words.length(); ++j) {
+                if (words[i] == words[j]) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+            Word newWord = Word(words[i].getWord(), count);
+            newWords.push(newWord);
+        }
+    }
+    return newWords;
+}
