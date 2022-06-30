@@ -51,7 +51,7 @@ public:
         if (index < size) return arr[index];
     };
 
-    T getIndex(T data) {
+    int getIndex(T data) {
         for (int i = 0; i < size; ++i) {
             if (arr[i] == data) {
                 return i;
