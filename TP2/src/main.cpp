@@ -1,11 +1,13 @@
 #include <iostream>
 #include <getopt.h>
 #include "../include/msgassert.h"
-#include "../include/word.h"
 #include "../include/files.h"
+#include "../include/sort.h"
+#include "../include/helper.h"
 
 std::string inputFile;
 std::string outputFile;
+Vector<char> Word::_alphabet = Vector<char>();
 
 void parse_args(int argc, char** argv) {
     int c;
@@ -27,14 +29,19 @@ void parse_args(int argc, char** argv) {
     erroAssert(outputFile.length() == 0, "main - É necessário fornecer o nome do arquivo de saída");
 }
 
-
 int main(int argc, char** argv) {
     parse_args(argc, argv);
 
-    Vector<std::string> words;
-    Vector<Word> wordsCount;
-    readFile(inputFile, &words);
-    writeFile(outputFile, wordsCount);
+    Vector<Word> words;
+    Vector<char> newAlphabet;
+    readFile(inputFile, &newAlphabet, &words);
+
+    Word::setAlphabet(newAlphabet);
+    Sort<Word> sorter;
+    sorter.quickSort(words, 0, words.length() - 1);
+    Vector<Word> newWords = uniteRepeatedWords(words);
+
+    writeFile(outputFile, newWords);
 
     return 0;
 }
