@@ -41,6 +41,6 @@ void writeFile(const std::string &filename, Vector<Word> words) {
     for (int i = 0; i < words.length(); ++i) {
         words[i].print();
     }
-    std::cout << "#FIM";
+    std::cout << "#FIM" << std::endl;
     fclose(fp);
 }
