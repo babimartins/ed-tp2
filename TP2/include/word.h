@@ -27,13 +27,13 @@ public:
     bool operator< (const Word &other) const {
         std::string left = _word;
         std::string right = other._word;
-        unsigned long long size = left.length() < right.length() ? left.length() : right.length();
+        unsigned long long size = left.length() <= right.length() ? left.length() : right.length();
         for (int i = 0; i < size; ++i) {
             if (left[i] != right[i]) {
                 return _alphabet.getIndex(left[i]) < _alphabet.getIndex(right[i]);
             }
         }
-        return true;
+        return left.length() < right.length();
     }
 
     bool operator> (const Word &other) const {
