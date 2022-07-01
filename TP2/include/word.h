@@ -30,6 +30,9 @@ public:
         unsigned long long size = left.length() <= right.length() ? left.length() : right.length();
         for (int i = 0; i < size; ++i) {
             if (left[i] != right[i]) {
+                if (_alphabet.getIndex(left[i]) == -1 && _alphabet.getIndex(right[i]) == -1) {
+                    return left[i] < right[i];
+                }
                 return _alphabet.getIndex(left[i]) < _alphabet.getIndex(right[i]);
             }
         }
