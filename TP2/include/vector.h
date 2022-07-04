@@ -40,7 +40,7 @@ public:
     };
 
     void push(T data, int index) {
-        if (index == max) {
+        if (index >= max) {
             push(data);
         } else {
             arr[index] = data;
