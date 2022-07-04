@@ -20,8 +20,17 @@ public:
         }
     }
 
-    int partition(Vector<T> vector, int start, int end) {
+    int partition(Vector<T> vector, int start, int end, int median) {
         T pivot = vector.get(start);
+
+        if (median > 1) {
+            Vector<T> medianVector;
+            for (int i = start; i < start + median; ++i) {
+                medianVector.push(vector[i], i - start);
+            }
+            insertion(&medianVector, 0, medianVector.length() - 1);
+            pivot = medianVector[median / 2];
+        }
 
         int count = 0;
         for (int i = start + 1; i <= end; i++) {
@@ -52,15 +61,18 @@ public:
         return pivotIndex;
     }
 
-    void quickSort(Vector<T> vector, int start, int end) {
+    void quickSort(Vector<T> vector, int start, int end, int median, int s) {
         if (start >= end)
             return;
 
-        int p = partition(vector, start, end);
-
-        quickSort(vector, start, p - 1);
-
-        quickSort(vector, p + 1, end);
+        int partitionSize = end - start + 1;
+        if ((partitionSize <= s) || (s < partitionSize && partitionSize < median)) {
+            insertion(&vector, start, end);
+        } else {
+            int p = partition(vector, start, end, median);
+            quickSort(vector, start, p - 1, median, s);
+            quickSort(vector, p + 1, end, median, s);
+        }
     }
 };
 
