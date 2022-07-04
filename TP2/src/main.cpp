@@ -12,6 +12,7 @@ Vector<char> Word::_alphabet = Vector<char>();
 
 void parse_args(int argc, char** argv) {
     int c;
+    extern char* optarg;
 
     while ((c = getopt(argc, argv, "i:I:O:o:M:m:s:S:")) != EOF) {
         switch (c) {
