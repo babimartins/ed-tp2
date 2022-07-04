@@ -18,14 +18,14 @@ void removePunctuation(std::string* word) {
     }
 }
 
-void toLowerCaseChar(char *letter) {
-    if (*letter <= 'Z' && *letter >= 'A') {
-        *letter = *letter - ('Z' - 'z');
+void toLowerCaseChar(char* letter) {
+    if ((*letter) <= 'Z' && (*letter) >= 'A') {
+        (*letter) = (*letter) - ('Z' - 'z');
     }
 }
 
-void toLowerCaseString(std::string *word) {
-    for (char & c : *word) {
+void toLowerCaseString(std::string* word) {
+    for (char & c : (*word)) {
         if (c <= 'Z' && c >= 'A') {
             c = c - ('Z' - 'z');
         }
