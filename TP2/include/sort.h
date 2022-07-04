@@ -8,6 +8,18 @@ template <typename T> class Sort {
 public:
     Sort() = default;
 
+    void insertion(Vector<T>* vector, int start, int end) {
+        for (int i = start; i <= end; i++) {
+            T el = (*vector)[i];
+            int j = i - 1;
+            while (j >= 0 && el < (*vector)[j]) {
+                (*vector)[j + 1] = (*vector)[j];
+                --j;
+            }
+            (*vector)[j + 1] = el;
+        }
+    }
+
     int partition(Vector<T> vector, int start, int end) {
         T pivot = vector.get(start);
 
