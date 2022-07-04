@@ -6,13 +6,17 @@
 #include "../include/helper.h"
 
 int m = 0, s = 0;
-std::string inputFile;
-std::string outputFile;
+std::string inputFile, outputFile;
 Vector<char> Word::_alphabet = Vector<char>();
 
 void parse_args(int argc, char** argv) {
     int c;
     extern char* optarg;
+
+    m = 0;
+    s = 0;
+    inputFile = "";
+    outputFile = "";
 
     while ((c = getopt(argc, argv, "i:I:O:o:M:m:s:S:")) != EOF) {
         switch (c) {
