@@ -1,12 +1,11 @@
 #include "../include/helper.h"
 
 void removePunctuation(std::string* word) {
-    char chars[] = ".,!?:;_";
+    const char chars[] = ".,!?:;_";
     int indexes[(*word).size()], count = 0;
     for (int i = 0; i < (*word).size(); ++i) {
         for (int j = 0; j < 7; ++j) {
             if ((*word)[i] == chars[j]) {
-                char a = (*word)[i];
                 indexes[count] = i;
                 count++;
                 break;
