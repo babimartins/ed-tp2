@@ -25,7 +25,6 @@ void readFile(const std::string& filename, Vector<char>* alphabet, Vector<Word>*
             if (!word.empty() && word != "#TEXTO") {
                 toLowerCaseString(&word);
                 removePunctuation(&word);
-                std::cout << word[word.length() - 1];
                 while (word[word.length() - 1] == '-') {
                     std::string nextWord;
                     file >> nextWord;
