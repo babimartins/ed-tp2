@@ -10,7 +10,7 @@ OBJ_FOLDER = ./obj/
 SRC_FOLDER = ./src/
 
 # all sources, objs, and header files
-TARGET = TP1.exe
+TARGET = TP2.exe
 SRC = $(wildcard $(SRC_FOLDER)*.cpp)
 OBJ = $(patsubst $(SRC_FOLDER)%.cpp, $(OBJ_FOLDER)%.o, $(SRC))
 
