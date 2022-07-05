@@ -25,9 +25,7 @@ void toLowerCaseChar(char* letter) {
 
 void toLowerCaseString(std::string* word) {
     for (char & c : (*word)) {
-        if (c <= 'Z' && c >= 'A') {
-            c = c - ('Z' - 'z');
-        }
+        toLowerCaseChar(&c);
     }
 }
 
