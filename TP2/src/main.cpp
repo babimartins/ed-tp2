@@ -50,11 +50,11 @@ int main(int argc, char** argv) {
 
     Vector<Word> words;
     Vector<char> newAlphabet;
+
     readFile(inputFile, &newAlphabet, &words);
 
     Word::setAlphabet(newAlphabet);
     Sort<Word> sorter;
-    sorter.quickSort(words, 0, words.length() - 1, m, s);
     sorter.quicksort(words, 0, words.length() - 1, m, s);
     Vector<Word> newWords = uniteRepeatedWords(words);
 
