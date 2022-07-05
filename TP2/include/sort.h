@@ -61,7 +61,7 @@ public:
         return pivotIndex;
     }
 
-    void quickSort(Vector<T> vector, int start, int end, int median, int s) {
+    void quicksort(Vector<T> vector, int start, int end, int median, int s) {
         if (start >= end)
             return;
 
@@ -70,8 +70,8 @@ public:
             insertion(&vector, start, end);
         } else {
             int p = partition(vector, start, end, median);
-            quickSort(vector, start, p - 1, median, s);
-            quickSort(vector, p + 1, end, median, s);
+            quicksort(vector, start, p - 1, median, s);
+            quicksort(vector, p + 1, end, median, s);
         }
     }
 };
