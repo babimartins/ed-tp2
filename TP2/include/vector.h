@@ -84,9 +84,11 @@ public:
     };
 
     void swap(int left, int right) {
-        T aux = arr[left];
-        arr[left] = arr[right];
-        arr[right] = aux;
+        if (left >= 0 && right <= size) {
+            T aux = arr[left];
+            arr[left] = arr[right];
+            arr[right] = aux;
+        }
     };
 
     T& operator[](int i) {
